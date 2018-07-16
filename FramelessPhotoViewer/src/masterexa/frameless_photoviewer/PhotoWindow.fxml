@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane onMouseEntered="#onFocusEnter" onMouseExited="#onFocusExit" prefHeight="316.0" prefWidth="129.0" styleClass="photo-background" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="masterexa.frameless_photoviewer.PhotoWindow">
+   <children>
+      <AnchorPane fx:id="imagePane" nodeOrientation="LEFT_TO_RIGHT" onZoom="#onZooming" prefHeight="200.0" prefWidth="200.0" styleClass="photo-background" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="imageView" cacheHint="SCALE_AND_ROTATE" onMouseDragged="#onImageDragged" onMousePressed="#onMoveStart" onScroll="#onZooming" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="controlsPane" pickOnBounds="false" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" onMouseDragged="#onMoving" onMousePressed="#onMoveStart" prefHeight="40.0" prefWidth="200.0" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <CheckBox fx:id="viewerModeCheck" mnemonicParsing="false" onAction="#onChangeViewerMode" text="Trimming" />
+                  <Button alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#onClose" text="X">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets right="4.0" />
+               </padding>
+               <effect>
+                  <DropShadow color="WHITE" spread="0.3" />
+               </effect>
+            </HBox>
+            <Rectangle fx:id="borderRect" arcHeight="5.0" arcWidth="5.0" disable="true" fill="#1f93ff00" height="800.0" stroke="BLACK" strokeType="INSIDE" width="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <ToggleButton fx:id="frontPinToggle" mnemonicParsing="false" onAction="#onFrontPinAction" text="=" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="4.0" />
+         </children>
+      </AnchorPane>
+      <Pane fx:id="resizePaneSE" cacheHint="SPEED" onMouseDragged="#onResizing" onMousePressed="#onResizeStart" onMouseReleased="#onResizeExit" prefHeight="16.0" prefWidth="16.0" AnchorPane.bottomAnchor="-8.0" AnchorPane.rightAnchor="-8.0">
+         <cursor>
+            <Cursor fx:constant="SE_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="resizePaneNW" cacheHint="SPEED" onMouseDragged="#onResizing" onMousePressed="#onResizeStart" onMouseReleased="#onResizeExit" prefHeight="16.0" prefWidth="16.0" AnchorPane.leftAnchor="-8.0" AnchorPane.topAnchor="-8.0">
+         <cursor>
+            <Cursor fx:constant="SE_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="resizePaneNE" cacheHint="SPEED" onMouseDragged="#onResizing" onMousePressed="#onResizeStart" onMouseReleased="#onResizeExit" prefHeight="16.0" prefWidth="16.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="-8.0">
+         <cursor>
+            <Cursor fx:constant="NE_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="resizePaneSW" cacheHint="SPEED" onMouseDragged="#onResizing" onMousePressed="#onResizeStart" onMouseReleased="#onResizeExit" prefHeight="16.0" prefWidth="16.0" AnchorPane.bottomAnchor="-8.0" AnchorPane.leftAnchor="-8.0">
+         <cursor>
+            <Cursor fx:constant="NE_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="resizePaneN" cacheHint="SPEED" onMouseDragged="#onResizing" onMousePressed="#onResizeStart" onMouseReleased="#onResizeExit" prefHeight="16.0" prefWidth="16.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="-8.0">
+         <cursor>
+            <Cursor fx:constant="V_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="resizePaneE" cacheHint="SPEED" onMouseDragged="#onResizing" onMousePressed="#onResizeStart" onMouseReleased="#onResizeExit" prefHeight="16.0" prefWidth="16.0" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="8.0">
+         <cursor>
+            <Cursor fx:constant="H_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="resizePaneS" cacheHint="SPEED" onMouseDragged="#onResizing" onMousePressed="#onResizeStart" onMouseReleased="#onResizeExit" prefHeight="16.0" prefWidth="16.0" AnchorPane.bottomAnchor="-8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+         <cursor>
+            <Cursor fx:constant="V_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="resizePaneW" cacheHint="SPEED" onMouseDragged="#onResizing" onMousePressed="#onResizeStart" onMouseReleased="#onResizeExit" prefHeight="16.0" prefWidth="16.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="-8.0" AnchorPane.topAnchor="8.0">
+         <cursor>
+            <Cursor fx:constant="H_RESIZE" />
+         </cursor>
+      </Pane>
+   </children>
+   <padding>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+   </padding>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>

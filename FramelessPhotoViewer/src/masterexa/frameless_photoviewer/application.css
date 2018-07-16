@@ -1,0 +1,18 @@
+
+.photo-background{
+	-fx-background-color : transparent;
+}
+
+.large-label{
+	-fx-font-size : 24pt;
+}
+
+.circle-button {
+    -fx-pref-width: 4.0em;
+    -fx-pref-height: 4.0em;
+    -fx-background-radius: 2.0em;
+    -fx-background-color: null;
+    -fx-border-radius: 2.0em;
+    -fx-border-color: black;
+    -fx-border-width: 2.0px;
+}

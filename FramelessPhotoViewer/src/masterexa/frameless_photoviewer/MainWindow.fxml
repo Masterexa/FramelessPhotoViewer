@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#onMoving" onMousePressed="#onMoveStart" prefHeight="300.0" prefWidth="400.0" styleClass="photo-background" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="masterexa.frameless_photoviewer.MainWindow">
+   <children>
+      <TitledPane animated="false" collapsible="false" focusTraversable="false" text="Image Viewer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <VBox alignment="CENTER" onDragDropped="#onFileDropped" onDragOver="#onFileDragOver" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label stylesheets="@application.css" text="Open or Drop" textAlignment="CENTER">
+                     <font>
+                        <Font size="48.0" />
+                     </font></Label>
+                  <Button mnemonicParsing="false" onAction="#onPressOpen" text="Open" />
+               </children>
+            </VBox>
+         </content>
+      </TitledPane>
+      <HBox alignment="TOP_RIGHT" layoutY="16.0" prefHeight="27.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button layoutX="365.0" layoutY="10.0" mnemonicParsing="false" onAction="#onMinimum" text="_" />
+            <Button mnemonicParsing="false" onAction="#onClose" text="X" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+   </padding>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>
