@@ -14,3 +14,8 @@ Frameless Photo ViewerはJavaFXで開発中のフォトビューワーです。<
 名前の通り、このソフトウェアは任意の画像をウィンドウのフレームなしで表示することができます。また、画像をトリミングをしたり画面の最前面に表示することもできるため、画像編集時などにメモとして役立ちます。
 
 ソフトウェアは試作段階にあるため、問題が発生する可能性があります。あらかじめご注意ください。
+
+
+## Download
+
+[https://github.com/Masterexa/FramelessPhotoViewer/releases](https://github.com/Masterexa/FramelessPhotoViewer/releases)
