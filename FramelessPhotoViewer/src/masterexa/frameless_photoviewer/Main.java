@@ -1,6 +1,7 @@
 package masterexa.frameless_photoviewer;
 
 import javafx.application.Application;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
 
@@ -35,6 +36,11 @@ public class Main extends Application {
 
 					// Create MainWindow
 					controller = MainWindow.createWindow(primaryStage);
+
+					// Register PhotoEntity
+					controller.addFileLoader(new PhotoEntity.FileLoader(), "bmp", "gif", "jpg", "jpeg", "png");
+					controller.getChooserExtensionFilters().add(new ExtensionFilter("Images", "*.bmp", "*.gif", "*.jpg", "*.jpeg", "*.png"));
+
 
 				} catch(Exception e) {
 					e.printStackTrace();

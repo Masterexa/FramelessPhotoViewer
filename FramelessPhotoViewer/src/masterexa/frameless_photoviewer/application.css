@@ -16,3 +16,73 @@
     -fx-border-color: black;
     -fx-border-width: 2.0px;
 }
+
+.StageFrameBorder{
+	-fx-background-color: null;
+	-fx-background-insets: 0;
+	-fx-border-color : gray;
+}
+
+.MainWindowFill{
+	-fx-background-color: white;
+}
+
+
+Button.StageFrame{
+	-fx-background-color: null;
+	-fx-text-fill: white;
+	-fx-alignment: center;
+	-fx-graphic-text-gap: 0;
+	-fx-text-overrun: ellipsis;
+	-fx-label-padding: 0 0 0 0;
+}
+
+Button.StageFrame:hover {
+    -fx-background-color: rgb(96,96,96,0.4);
+}
+Button.StageFrame:pressed {
+    -fx-background-color: rgb(64,64,64,0.4);
+}
+Button.StageFrame:selected {
+    -fx-background-color: rgb(64,64,64,0.4);
+}
+
+
+ToggleButton.StageFrame{
+	-fx-background-color: null;
+	-fx-text-fill: white;
+	-fx-alignment: center;
+	-fx-graphic-text-gap: 0;
+	-fx-text-overrun: ellipsis;
+	-fx-label-padding: 0 0 0 0;
+}
+
+ToggleButton.StageFrame:hover {
+    -fx-background-color: rgb(96,96,96,0.4);
+}
+ToggleButton.StageFrame:pressed {
+    -fx-background-color: rgb(64,64,64,0.4);
+}
+ToggleButton.StageFrame:selected {
+    -fx-background-color: rgb(64,64,64,0.4);
+}
+
+TitledPane.StageFrame{
+	-fx-text-fill : white;
+}
+
+
+TitledPane.StageFrame > .title{
+	-fx-alignment: center;
+	-fx-background-color: rgb(0,0,0,0.5);
+	-fx-background-insets: 0;
+	-fx-background-radius: 0 0 0 0;
+	-fx-border-color : gray;
+}
+
+TitledPane.StageFrame > *.content
+{
+	-fx-background-color: null;
+	-fx-background-insets: 0;
+	-fx-border-color : gray;
+ }
