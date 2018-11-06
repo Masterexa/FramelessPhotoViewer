@@ -40,7 +40,7 @@ public class MainWindow {
 				String name = file.getName();
 				int i = name.lastIndexOf('.');
 
-				return (i>0) ? name.substring(i+1) : "";
+				return (i>0) ? name.substring(i+1).toLowerCase() : "";
 			}
 
 
@@ -80,7 +80,7 @@ public class MainWindow {
 			{
 				for(String it : exts)
 				{
-					loaders.put(it, handler);
+					loaders.put(it.toLowerCase(), handler);
 				}
 			}
 
