@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="masterexa.frameless_photoviewer.PhotoSceneView">
+   <children>
+      <ImageView fx:id="imageView" cacheHint="SCALE_AND_ROTATE" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

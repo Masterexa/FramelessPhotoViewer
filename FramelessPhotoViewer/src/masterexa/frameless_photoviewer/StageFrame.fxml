@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane styleClass="photo-background" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="masterexa.frameless_photoviewer.StageFrameView">
+   <children>
+      <AnchorPane fx:id="root" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <SubScene fx:id="outerSubScene" height="20.0" width="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <root>
+                <Region />
+              </root>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </SubScene>
+            <AnchorPane fx:id="frameAnchor" pickOnBounds="false" prefHeight="200.0" prefWidth="200.0" styleClass="StageFrameBorder" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <SubScene fx:id="innerSubScene" height="20.0" width="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <root>
+                      <Region />
+                    </root>
+                  </SubScene>
+                  <HBox alignment="TOP_RIGHT" prefHeight="26.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="minimizeButton" layoutX="188.0" layoutY="10.0" mnemonicParsing="false" styleClass="StageFrame" text="_">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                        <Button fx:id="closeButton" mnemonicParsing="false" styleClass="StageFrame" text="x" />
+                     </children>
+                  </HBox>
+                  <HBox pickOnBounds="false" prefHeight="32.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ToggleButton fx:id="focusPinToggle" mnemonicParsing="false" styleClass="StageFrame" HBox.hgrow="SOMETIMES">
+                           <graphic>
+                              <ImageView fitHeight="18.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@assets/images/pin_icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </ToggleButton>
+                        <HBox fx:id="optionButtonArea" pickOnBounds="false" prefHeight="100.0" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+               </children>
+               <effect>
+                  <DropShadow spread="0.1" />
+               </effect>
+            </AnchorPane>
+         </children>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </AnchorPane>
+      <Pane fx:id="boundTop" prefHeight="16.0" prefWidth="16.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="V_RESIZE" />
+         </cursor></Pane>
+      <Pane fx:id="boundBottom" layoutX="18.0" layoutY="10.0" prefHeight="16.0" prefWidth="16.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+         <cursor>
+            <Cursor fx:constant="V_RESIZE" />
+         </cursor></Pane>
+      <Pane fx:id="boundLeft" layoutX="18.0" layoutY="202.0" prefHeight="16.0" prefWidth="16.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="8.0">
+         <cursor>
+            <Cursor fx:constant="H_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="boundRight" layoutX="10.0" layoutY="18.0" prefHeight="16.0" prefWidth="16.0" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="8.0">
+         <cursor>
+            <Cursor fx:constant="H_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="boundLeftTop" layoutX="224.0" layoutY="18.0" prefHeight="16.0" prefWidth="16.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="NW_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="boundRightTop" layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="16.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="NE_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="boundRightBottom" layoutX="224.0" layoutY="10.0" prefHeight="16.0" prefWidth="16.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="SE_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="boundLeftBottom" layoutX="224.0" layoutY="202.0" prefHeight="16.0" prefWidth="16.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="SW_RESIZE" />
+         </cursor>
+      </Pane>
+   </children>
+</AnchorPane>
